@@ -1,0 +1,22 @@
+{
+  "name": "playwrightframework",
+  "version": "1.0.0",
+  "description": "Demo Playwright Framework",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adwaitjagtap/PlaywrightFramework.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adwaitjagtap/PlaywrightFramework/issues"
+  },
+  "homepage": "https://github.com/adwaitjagtap/PlaywrightFramework#readme",
+  "devDependencies": {
+    "@playwright/test": "1.40.1",
+    "@types/node": "20.11.2"
+  }
+}
