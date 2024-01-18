@@ -3,7 +3,24 @@
   "version": "1.0.0",
   "description": "Demo Playwright Framework",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test:smoke": "npx playwright test tests --grep @smoke",
+    "test:e2e": "npx playwright test tests --grep @e2e",
+    "test:smoke:chromium": "npx playwright test tests --project=chromium --headed --grep @smoke",
+    "test:smoke:firefox": "npx playwright test tests --project=firefox --headed --grep @smoke",
+    "test:smoke:safari": "npx playwright test tests --project=webkit --headed --grep @smoke",
+    "test:smoke:edge": "npx playwright test tests --project='Microsoft Edge' --headed --grep @smoke",
+    "test:smoke:chrome": "npx playwright test tests --project='Google Chrome' --headed --grep @smoke",
+    "test:smoke:MobileChrome": "npx playwright test tests --project='Mobile Chrome' --headed --grep @smoke",
+    "test:smoke:MobileSafari": "npx playwright test tests --project='Mobile Safari' --headed --grep @smoke",
+    "test:smoke:exampleTitle": "npx playwright test tests --project='Mobile Safari' --headed -g 'get started link'",
+    "test:smoke:exampleUI": "npx playwright test tests --project=firefox --ui",
+    "test:smoke:debug": "npx playwright test tests --project=chromium --debug -g 'get started link'",
+    "test:report": "npx playwright show-report",
+
+    "test:ee:debug": "npx playwright test tests --project=chromium --debug --grep @ee",
+    "test:ee": "npx playwright test tests --project=chromium --headed --grep @ee"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/adwaitjagtap/PlaywrightFramework.git"
@@ -16,7 +33,13 @@
   },
   "homepage": "https://github.com/adwaitjagtap/PlaywrightFramework#readme",
   "devDependencies": {
+    "@faker-js/faker": "^8.3.1",
     "@playwright/test": "1.40.1",
     "@types/node": "20.11.2"
+  },
+  "dependencies": {
+    "@azure/msal-node": "^2.6.1",
+    "dotenv": "^16.3.1",
+    "randomatic": "^3.1.1"
   }
 }

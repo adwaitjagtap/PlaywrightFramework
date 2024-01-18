@@ -11,7 +11,7 @@ const TODO_ITEMS = [
 ];
 
 test.describe('New Todo', () => {
-  test('should allow me to add todo items', async ({ page }) => {
+  test('@smoke - should allow me to add todo items', async ({ page }) => {
     // create a new todo locator
     const newTodo = page.getByPlaceholder('What needs to be done?');
 
@@ -88,7 +88,7 @@ test.describe('Mark all as completed', () => {
     await checkNumberOfCompletedTodosInLocalStorage(page, 3);
   });
 
-  test('should allow me to clear the complete state of all items', async ({ page }) => {
+  test('@smoke - should allow me to clear the complete state of all items', async ({ page }) => {
     const toggleAll = page.getByLabel('Mark all as complete');
     // Check and then immediately uncheck.
     await toggleAll.check();
@@ -121,7 +121,7 @@ test.describe('Mark all as completed', () => {
 
 test.describe('Item', () => {
 
-  test('should allow me to mark items as complete', async ({ page }) => {
+  test('@smoke - should allow me to mark items as complete', async ({ page }) => {
     // create a new todo locator
     const newTodo = page.getByPlaceholder('What needs to be done?');
 
@@ -207,7 +207,7 @@ test.describe('Editing', () => {
     await checkNumberOfTodosInLocalStorage(page, 3);
   });
 
-  test('should save edits on blur', async ({ page }) => {
+  test('@smoke - should save edits on blur', async ({ page }) => {
     const todoItems = page.getByTestId('todo-item');
     await todoItems.nth(1).dblclick();
     await todoItems.nth(1).getByRole('textbox', { name: 'Edit' }).fill('buy some sausages');
@@ -257,7 +257,7 @@ test.describe('Editing', () => {
 });
 
 test.describe('Counter', () => {
-  test('should display the current number of todo items', async ({ page }) => {
+  test('@smoke - should display the current number of todo items', async ({ page }) => {
     // create a new todo locator
     const newTodo = page.getByPlaceholder('What needs to be done?');
     
@@ -287,7 +287,7 @@ test.describe('Clear completed button', () => {
     await expect(page.getByRole('button', { name: 'Clear completed' })).toBeVisible();
   });
 
-  test('should remove completed items when clicked', async ({ page }) => {
+  test('@smoke - should remove completed items when clicked', async ({ page }) => {
     const todoItems = page.getByTestId('todo-item');
     await todoItems.nth(1).getByRole('checkbox').check();
     await page.getByRole('button', { name: 'Clear completed' }).click();
@@ -303,7 +303,7 @@ test.describe('Clear completed button', () => {
 });
 
 test.describe('Persistence', () => {
-  test('should persist its data', async ({ page }) => {
+  test('@smoke - should persist its data', async ({ page }) => {
     // create a new todo locator
     const newTodo = page.getByPlaceholder('What needs to be done?');
 
@@ -339,7 +339,7 @@ test.describe('Routing', () => {
     await checkTodosInLocalStorage(page, TODO_ITEMS[0]);
   });
 
-  test('should allow me to display active items', async ({ page }) => {
+  test('@smoke - should allow me to display active items', async ({ page }) => {
     const todoItem = page.getByTestId('todo-item');
     await page.getByTestId('todo-item').nth(1).getByRole('checkbox').check();
 
